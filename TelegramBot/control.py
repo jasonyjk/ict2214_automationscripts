@@ -1,6 +1,6 @@
 import subprocess
 import os
-session_file = 'D:\SIT\Year 2\Tri 3\ITP\TelegramBot\session_name.session'
+session_file = 'INSERT TELEGRAM SESSION FILE PATH HERE'
 
 def run_script(script_name):
     print("Reached RunScript function.")
@@ -8,8 +8,6 @@ def run_script(script_name):
     return subprocess.Popen(['python', script_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1)
 
 def monitor_script(process):
-    #stdout, stderr = process.communicate()
-    #return process.returncode, stdout, stderr
     while True:
         output = process.stdout.readline()
         if output:
@@ -29,8 +27,7 @@ def main():
 
     # Run the first script
     print("Starting the first script...")
-    process1 = run_script('TelegramBot/automated_msg_1.py')
-    #print("Script has completed running.")
+    process1 = run_script('automated_msg_1.py')
     returncode, stderr = monitor_script(process1)
     
     # Check if the first script terminated due to FloodWaitError
@@ -39,7 +36,7 @@ def main():
         
         # Run the second script
         print("Starting Second Script")
-        process2 = run_script('TelegramBot/automated_msg_2.py')
+        process2 = run_script('automated_msg_2.py')
         returncode, stderr = monitor_script(process2)
 
         if returncode == 0:
