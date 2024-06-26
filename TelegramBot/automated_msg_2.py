@@ -4,10 +4,10 @@ import asyncio
 import datetime
 
 # Replace these with your own values
-api_id = '25015690'
-api_hash = 'f12dd5b83859d9140f7243f3fe19e46d'
-phone_number = '+6580879563'
-bot_username = 'itp_msgbot'
+api_id = 'API ID HERE'
+api_hash = 'API HASH HERE'
+phone_number = '+65[PHONE NUMBER HERE]'
+bot_username = 'BOT USERNAME HERE'
 message = '/start'
 
 # Create the client and connect

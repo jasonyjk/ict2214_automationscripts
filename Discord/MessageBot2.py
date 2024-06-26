@@ -1,8 +1,8 @@
 import discord
 import asyncio
 
-TOKEN = 'MTI1NDc4Mzk2ODc5NzI2MTkwNA.GnD8q9.ZN3Hi0GI3StErYUpPSXrhD3mshceffzD4U8JwU'
-CHANNEL_ID = 1234446166008270878
+TOKEN = 'BOT TOKEN HERE'
+CHANNEL_ID = 'CHANNEL ID HERE'
 
 intents = discord.Intents.default()
 intents.message_content = True

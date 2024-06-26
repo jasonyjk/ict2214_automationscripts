@@ -2,13 +2,12 @@ from telethon import TelegramClient
 from telethon.errors import FloodWaitError
 import asyncio
 import datetime
-import os
 
 # Replace these with your own values
-api_id = '24393142'
-api_hash = 'ac5f008d615b5f15edc16c6d50dab3b8'
-phone_number = '+6582881364'
-bot_username = 'itp_msgbot'
+api_id = 'API ID HERE'
+api_hash = 'API HASH HERE'
+phone_number = '+65[PHONE NUMBER HERE]'
+bot_username = 'BOT USERNAME HERE'
 message = '/start'
 
 
