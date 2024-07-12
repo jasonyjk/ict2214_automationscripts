@@ -34,7 +34,12 @@ def main():
     if os.path.exists(session_file):
         os.remove(session_file)
         print(f"Deleted session file: {session_file}")
+    else:
+        print(f"No session file to delete.")
 
+    # Run the Telegram bot first.
+    run_script('bot.py')
+    
     # Run the first script
     print("Starting the first script...")
     process1 = run_script('automated_msg_1.py')
