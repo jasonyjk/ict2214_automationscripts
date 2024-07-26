@@ -3,7 +3,7 @@ from pywinauto import Application
 import time
 
 # Start Teams application
-teams_path = r'C:\Users\JasonYeo\AppData\Local\Microsoft\Teams\current\Teams.exe'
+teams_path = r'C:\Users\XXX\AppData\Local\Microsoft\Teams\current\Teams.exe'
 app = Application(backend='uia').start(teams_path)
 
 # Connect to the Teams main window based on its title. The specific title can vary, so it might need adjustments.

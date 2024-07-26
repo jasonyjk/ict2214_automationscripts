@@ -229,11 +229,11 @@ class ZoomBotUI(QMainWindow):
         # HERE
         # notification.notify("ZoomAuto", "Meeting has started", "ZoomAuto", './ZoomAuto.ico')
         try:
-            zoomWin = Application(backend='uia').start(r"C:\Users\JasonYeo\AppData\Roaming\Zoom\bin\Zoom.exe").connect(title='Zoom Workplace', timeout=100)
+            zoomWin = Application(backend='uia').start(r"C:\Users\XXX\AppData\Roaming\Zoom\bin\Zoom.exe").connect(title='Zoom Workplace', timeout=100)
             #zoomWin.Dialog.print_control_identifiers()
         except timings.TimeoutError:
             try:
-                zoomWin = Application(backend='uia').start(r"C:\Users\JasonYeo\AppData\Roaming\Zoom\bin\Zoom.exe").connect(title='Zoom Workplace', timeout=100)
+                zoomWin = Application(backend='uia').start(r"C:\Users\XXX\AppData\Roaming\Zoom\bin\Zoom.exe").connect(title='Zoom Workplace', timeout=100)
                 # notification.notify("ZoomAuto", "Bad Internet Connection", "ZoomAuto", './ZoomAuto.ico')
             except timings.TimeoutError:
                 # notification.notify("ZoomAuto", "Zoom Not Installed, Meeting Failed", "ZoomAuto", './ZoomAuto.ico')
@@ -300,8 +300,10 @@ class ZoomBotUI(QMainWindow):
 
         internal2 = Application(backend='uia').connect(title="Select a window or an application that you want to share", timeout=30)
         # internal2.Dialog.print_control_identifiers()
+        # sleep(5000);
 
-        entireScreen = internal2.Dialog.child_window(title="Screen, share your entire screen", control_type="ListItem").wrapper_object()
+        # entireScreen = internal2.Dialog.child_window(title="Screen, share your entire screen", control_type="ListItem").wrapper_object()
+        entireScreen = internal2.Dialog.child_window(title_re=".*- YouTube - Google Chrome$", control_type="ListItem").wrapper_object()
         entireScreen.click_input()
 
         shareSound = internal2.Dialog.child_window(title="Share sound Select this option if you want others to hear sounds coming from your computer as well as see your shared screen", control_type="CheckBox").wrapper_object()
@@ -310,9 +312,22 @@ class ZoomBotUI(QMainWindow):
         optimizeVideo = internal2.Dialog.child_window(title="Optimize for video clip Optimize screen sharing for viewing video clip.", control_type="CheckBox").wrapper_object()
         optimizeVideo.click_input()
 
-        shareBtn = internal2.Dialog.child_window(title="Share Screen", control_type="Button")
+        # shareBtn = internal2.Dialog.child_window(title="Share Screen", control_type="Button")
+        shareBtn = internal2.Dialog.child_window(title_re=".*Share", control_type="Button")
         shareBtn.click_input()
+        sleep(5);
 
+        internal3 = Application(backend='uia').connect(title="Screen Sharing Meeting Controls", timeout=30)
+        # internal3.Dialog.print_control_identifiers()
+        stopShare = internal3.Dialog.child_window(title="Stop share (Alt+S)", control_type="Button").wrapper_object()
+        stopShare.click_input()
+
+        internal4 = Application(backend='uia').connect(title="Zoom Meeting", timeout=30)
+        #internal4.Dialog.print_control_identifiers()
+        leaveZoom = internal4.Dialog.child_window(title="Leave, Alt+Q", control_type="Button").wrapper_object()
+        leaveZoom.click_input()
+        exitMeeting = internal4.Dialog.child_window(title="Leave meeting", control_type="Button").wrapper_object()
+        exitMeeting.click_input()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)    # creates application framework and interact with the OS

@@ -114,8 +114,8 @@ def watch_tiktok_videos(driver):
 
 
 def main():
-    username = "xxx@hotmail.com"  # Replace with your actual username.
-    password = "xxx"              # Replace with your actual password.
+    username = ""  # Replace with your actual username.
+    password = ""  # Replace with your actual password.
 
     # Setup for Selenium WebDriver.
     chrome_driver_path = 'C:\\chromedriver-win64\\chromedriver.exe'  # Update the path to your chromedriver.

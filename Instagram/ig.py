@@ -142,7 +142,7 @@ def like_stories(driver, usernames):
         driver.get(story_url)
         random_delay(3, 7)
 
-        view_story_xpath = "//div[@role='button' and text()='View story']"
+        view_story_xpath = "//div[@role='button' and text()='View Story']"
         like_button_xpath = "//div[@role='button' and @tabindex='0' and contains(@class,'x1i10hfl')]//*[name()='svg' and @aria-label='Like']"
 
         try:

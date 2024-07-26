@@ -56,8 +56,8 @@ def accept_call(driver):
 # Main function to orchestrate the automation process.
 def main():
     # Credentials for login.
-    email = "xxx@hotmail.com"
-    password = "xxx"
+    email = ""
+    password = ""
 
     # Configure Chrome options to optimize for automation.
     chrome_options = Options()

@@ -1,7 +1,7 @@
 from pywinauto.application import Application
 
 # Start the Zoom application and connect to the Zoom Workplace window.
-zoomWin = Application(backend='uia').start(r"C:\Users\JasonYeo\AppData\Roaming\Zoom\bin\Zoom.exe").connect(title='Zoom Workplace', timeout=100)
+zoomWin = Application(backend='uia').start(r"C:\Users\XXX\AppData\Roaming\Zoom\bin\Zoom.exe").connect(title='Zoom Workplace', timeout=100)
 # zoomWin.Dialog.print_control_identifiers()
 # Access the "Home" tab in the Zoom application's main window.
 homeTab = zoomWin.Dialog.child_window(title="Home 1 of 4", control_type="TabItem").wrapper_object()
@@ -20,7 +20,7 @@ idBox.type_keys("XXX XXX XXXX", with_spaces=True)  # replace "" with the meeting
 nameBox = joinWin.Dialog.child_window(title="Enter your name", control_type="Edit").wrapper_object()
 nameBox.click_input()
 nameBox.type_keys("^a{BACKSPACE}")   # Clears any text by selecting all and pressing BACKSPACE.
-nameBox.type_keys("", with_spaces=True)   # replace "" with the participant's name.
+nameBox.type_keys("XXX", with_spaces=True)   # replace "" with the participant's name.
 # # Access and click the "Join" button on the "Join meeting" dialog.
 joinBtn = joinWin.Dialog.child_window(title="Join", control_type="Button").wrapper_object()
 joinBtn.click_input()
@@ -30,7 +30,7 @@ passwdWin = Application(backend='uia').connect(title="Enter meeting passcode", t
 # # passwdWin.Dialog.print_control_identifiers()
 # # Access the "Meeting passcode" input field and type in the meeting passcode.
 passwdBox = passwdWin.Dialog.child_window(title="Meeting passcode", control_type="Edit").wrapper_object()
-passwdBox.type_keys("xxxx", with_spaces=True)  # replace "" with the meeting passcode.
+passwdBox.type_keys("XXXX", with_spaces=True)  # replace "" with the meeting passcode.
 # # Access and click the "Join meeting" button in the passcode window to finalize joining the meeting.
 meetingJoinBtn = passwdWin.Dialog.child_window(title="Join meeting", control_type="Button").wrapper_object()
 meetingJoinBtn.click_input()
